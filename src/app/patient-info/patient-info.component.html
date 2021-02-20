@@ -1,0 +1,13 @@
+<h2>Patient Information</h2>
+<br>
+
+<div class="row">
+    <div class="column" *ngFor="let patient of pateintData | convert">
+        <div class="card">
+            <div class="container">
+                <h2>{{patient.key}}</h2>
+                <span>{{patient.value}}</span>
+            </div>
+        </div>
+    </div>
+</div>

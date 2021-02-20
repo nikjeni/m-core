@@ -1,0 +1,17 @@
+<div>
+    <form [formGroup]="loginForm">
+        <label for="Employee Name">Email </label>
+        <input type="text" placeholder="Email" formControlName="email">
+        <span style="color: red;" *ngIf="loginForm.get('email').errors?.required">Email is required</span><br>
+        <span style="color: red;" *ngIf="loginForm.get('email').errors?.pattern">Enter valid mail id</span><br><br>
+
+        <label for="phone">Password</label>
+        <input type="password" placeholder="Password" formControlName="password">
+        <span style="color: red;" *ngIf="loginForm.get('password').errors?.required">Password is required</span><br>
+        <span style="color: red;" *ngIf="loginForm.get('password').errors?.minlength">Minimun length is 6 character
+            long</span><br>
+        <span style="color: red;" *ngIf="loginForm.get('password').errors?.pattern">Atleast one capital
+            letter</span><br><br>
+        <button (click)="login()" [disabled]="loginForm.invalid">Save</button>
+    </form>
+</div>
