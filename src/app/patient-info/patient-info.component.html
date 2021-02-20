@@ -6,7 +6,25 @@
         <div class="card">
             <div class="container">
                 <h2>{{patient.key}}</h2>
-                <span>{{patient.value}}</span>
+                <span *ngIf="patient.key == 'Personal info'">
+                    <p>Name : {{patient.value.Name}}</p>
+                    <p>Email : {{patient.value.Email}}</p>
+                    <p>Phone: {{patient.value.Phone}}</p>
+                    <p>Age : {{patient.value.Age}}</p>
+                </span>
+                <span *ngIf="patient.key == 'Medical Condition'">
+                    <p>Heart Disease : {{patient.value['Heart Disease']}}</p>
+                    <p>Diabetics : {{patient.value.Diabetics}}</p>
+                    <p>Blood Pressure :{{patient.value['Blood Pressure']['High BP']}} </p>
+                    <p>Blood Pressure :{{patient.value['Blood Pressure']['Low BP']}} </p>
+                </span>
+                <span *ngIf="patient.key == 'Health Status'">
+                    <p>BMI : {{patient.value.BMI}}</p>
+                    <p>BP : {{patient.value.BP}}</p>
+                    <p>Height : {{patient.value.Height}}</p>
+                    <p>Pulse Rate : {{patient.value['Pulse Rate']}}</p>
+                    <p>Weight : {{patient.value['Weight']}}</p>
+                </span>
             </div>
         </div>
     </div>
